@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin — Semillas de Esperanza</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">Semillas de Esperanza</a>
+    <nav aria-label="Principal">
+      <a href="index.html">Ver sitio</a>
+    </nav>
+  </header>
+
+  <main id="view" class="view">
+
+    <section id="login-section" class="panel">
+      <h1>Panel Admin</h1>
+      <form id="login-form" novalidate>
+        <label>
+          Correo
+          <input type="email" id="login-email" name="email" required autocomplete="username">
+        </label>
+        <label>
+          Contraseña
+          <input type="password" id="login-password" name="password" required autocomplete="current-password">
+        </label>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+      <p id="login-msg" class="state" role="alert" aria-live="polite"></p>
+    </section>
+
+    <section id="panel-section" class="panel" hidden>
+      <div class="panel-head">
+        <h1>Gestionar Semillas</h1>
+        <div class="panel-user-wrap">
+          <span id="panel-user" class="panel-user"></span>
+          <button id="logout-btn" class="btn btn-ghost">Cerrar sesión</button>
+        </div>
+      </div>
+      <button id="new-btn" class="btn">Nueva Semilla</button>
+      <form id="seed-form" hidden novalidate>
+        <h2 id="seed-form-title">Nueva Semilla</h2>
+        <label>
+          Imagen
+          <input type="file" id="seed-image" accept="image/*">
+        </label>
+        <label>
+          Mensaje
+          <textarea id="seed-message" rows="3" required></textarea>
+        </label>
+        <label>
+          Autor (opcional)
+          <input type="text" id="seed-author">
+        </label>
+        <label class="check">
+          <input type="checkbox" id="seed-active" checked>
+          Activa (visible públicamente)
+        </label>
+        <div class="row">
+          <button type="submit" class="btn">Guardar</button>
+          <button type="button" id="cancel-btn" class="btn btn-ghost">Cancelar</button>
+        </div>
+        <p id="form-msg" class="state" role="status"></p>
+      </form>
+      <p id="list-msg" class="state error" role="alert" aria-live="polite" hidden></p>
+      <div id="seeds-list" class="list"></div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

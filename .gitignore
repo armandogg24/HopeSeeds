@@ -1,0 +1,20 @@
+# Semillas de Esperanza — patrón denylist.
+# Se ignora TODO por defecto; se whitelesta solo lo necesario con `!`.
+# Un archivo nuevo NO se sube mientras no se le agrege un `!` aquí.
+*
+!.gitignore
+!README.md
+!LICENSE
+!index.html
+!admin.html
+!css/
+!css/**
+
+# Whitelists de archivos/carpetas
+!js/
+!js/main.js
+!js/admin.js
+!js/config.js
+!js/lib/
+!js/lib/*.js
+!js/lib/**
